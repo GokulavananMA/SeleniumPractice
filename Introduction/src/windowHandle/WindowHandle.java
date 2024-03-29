@@ -24,23 +24,22 @@ public class WindowHandle {
 		Set<String> allIds = driver.getWindowHandles();
 		for(String id: allIds)
 		{
-			if(!(id.equals(mainId)))
-			{
+			
 			driver.switchTo().window(id);
 			String title=driver.getTitle();
-			if(title.contains("YouTube"))
+			if(!(title.contains("YouTube")))
 			{
-				driver.close();
+			driver.close();
 			}
 			else
 			{
-				System.out.println(title);
+
+				System.out.println(driver.getTitle());
 			}
 			}
 		}
-		driver.quit();
+		
 		
 		
 	}
 
-}
